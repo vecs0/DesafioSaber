@@ -1,0 +1,261 @@
+{
+  "timestamp": "2025-07-07T00:48:50.834187",
+  "overall_status": "FAIR",
+  "components": {
+    "file_structure": {
+      "directories": {
+        "game": {
+          "status": true,
+          "name": "Juego Principal",
+          "exists": true
+        },
+        "web_admin": {
+          "status": true,
+          "name": "Panel Web",
+          "exists": true
+        },
+        "data": {
+          "status": true,
+          "name": "Base de Datos",
+          "exists": true
+        },
+        "assets": {
+          "status": true,
+          "name": "Recursos",
+          "exists": true
+        },
+        "scripts": {
+          "status": true,
+          "name": "Scripts de Utilidad",
+          "exists": true
+        },
+        "docs": {
+          "status": true,
+          "name": "Documentación",
+          "exists": true
+        },
+        "backups": {
+          "status": true,
+          "name": "Backups",
+          "exists": true
+        },
+        "tests": {
+          "status": true,
+          "name": "Pruebas",
+          "exists": true
+        }
+      },
+      "files": {
+        "game/main.py": {
+          "status": true,
+          "name": "Aplicación Principal",
+          "exists": true,
+          "size": 195250
+        },
+        "web_admin/server.py": {
+          "status": true,
+          "name": "Servidor Backend",
+          "exists": true,
+          "size": 45439
+        },
+        "web_admin/package.json": {
+          "status": true,
+          "name": "Configuración Node.js",
+          "exists": true,
+          "size": 1059
+        },
+        "data/questions.json": {
+          "status": true,
+          "name": "Base de Preguntas",
+          "exists": true,
+          "size": 293027
+        },
+        "data/users.json": {
+          "status": true,
+          "name": "Base de Usuarios",
+          "exists": true,
+          "size": 1143
+        },
+        "data/ranking.json": {
+          "status": true,
+          "name": "Ranking",
+          "exists": true,
+          "size": 1456
+        },
+        "scripts/test_connections.py": {
+          "status": true,
+          "name": "Script de Verificación",
+          "exists": true,
+          "size": 17758
+        },
+        "README_FINAL.md": {
+          "status": true,
+          "name": "Documentación Principal",
+          "exists": true,
+          "size": 9663
+        }
+      },
+      "overall": true
+    },
+    "database_integrity": {
+      "files": {
+        "data/questions.json": {
+          "status": true,
+          "name": "Preguntas",
+          "valid": true,
+          "count": 760,
+          "size": 293027
+        },
+        "data/users.json": {
+          "status": true,
+          "name": "Usuarios",
+          "valid": true,
+          "count": 2,
+          "size": 1143
+        },
+        "data/ranking.json": {
+          "status": true,
+          "name": "Ranking",
+          "valid": true,
+          "count": 1,
+          "size": 1456
+        },
+        "data/config.json": {
+          "status": true,
+          "name": "Configuración",
+          "valid": true,
+          "count": 6,
+          "size": 435
+        },
+        "data/categories.json": {
+          "status": true,
+          "name": "Categorías",
+          "valid": true,
+          "count": 9,
+          "size": 158
+        },
+        "data/achievements.json": {
+          "status": true,
+          "name": "Logros",
+          "valid": true,
+          "count": 23,
+          "size": 5836
+        },
+        "data/user_stats.json": {
+          "status": true,
+          "name": "Estadísticas de Usuario",
+          "valid": true,
+          "count": 2,
+          "size": 890
+        },
+        "data/game_history.json": {
+          "status": false,
+          "name": "Historial de Juegos",
+          "valid": false,
+          "error": "JSON inválido"
+        }
+      },
+      "overall": false,
+      "total_questions": 760,
+      "total_users": 2
+    },
+    "service_connectivity": {
+      "services": {
+        "http://localhost:5000/api/config": {
+          "status": true,
+          "name": "Backend Flask",
+          "response_time": 2.067,
+          "code": 200
+        },
+        "http://localhost:3000": {
+          "status": true,
+          "name": "Frontend React",
+          "response_time": 2.068,
+          "code": 200
+        }
+      },
+      "overall": true
+    },
+    "dependencies": {
+      "python": {
+        "pygame": {
+          "status": true,
+          "installed": true
+        },
+        "PIL": {
+          "status": true,
+          "installed": true
+        },
+        "requests": {
+          "status": true,
+          "installed": true
+        },
+        "matplotlib": {
+          "status": true,
+          "installed": true
+        },
+        "numpy": {
+          "status": true,
+          "installed": true
+        },
+        "flask": {
+          "status": true,
+          "installed": true
+        },
+        "flask_cors": {
+          "status": true,
+          "installed": true
+        },
+        "flask_socketio": {
+          "status": true,
+          "installed": true
+        },
+        "tkinter": {
+          "status": true,
+          "installed": true
+        }
+      },
+      "node": {
+        "node": {
+          "status": true,
+          "installed": true
+        },
+        "npm": {
+          "status": false,
+          "installed": false
+        }
+      },
+      "overall": false
+    },
+    "performance": {
+      "metrics": {
+        "game/main.py": {
+          "name": "Juego Principal",
+          "size": 195250,
+          "size_mb": 0.19
+        },
+        "web_admin/server.py": {
+          "name": "Servidor Backend",
+          "size": 45439,
+          "size_mb": 0.04
+        },
+        "data/questions.json": {
+          "name": "Base de Preguntas",
+          "size": 293027,
+          "size_mb": 0.28
+        }
+      },
+      "overall": true,
+      "total_size_mb": 0.51,
+      "disk_space_gb": 115.5
+    }
+  },
+  "recommendations": [
+    "💾 Verificar integridad de la base de datos",
+    "📦 Instalar dependencias faltantes",
+    "👥 Registrar más usuarios de prueba"
+  ],
+  "success_rate": 60.0,
+  "successful_components": 3,
+  "total_components": 5
+}

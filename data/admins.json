@@ -1,0 +1,11 @@
+{
+  "admin": {
+    "id": 1,
+    "username": "admin",
+    "fullName": "Victor Cabrera",
+    "password": "admin123",
+    "email": "admin@example.com",
+    "created_at": "2025-07-06T00:00:00",
+    "last_login": "2025-07-06T00:00:00"
+  }
+}

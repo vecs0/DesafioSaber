@@ -1,0 +1,31 @@
+{
+  "title": "DesafíoSaber",
+  "theme": "oscuro",
+  "difficulty": "difícil",
+  "sound": true,
+  "music": true,
+  "game_modes": [
+    {
+      "name": "Clásico",
+      "numQuestions": 15,
+      "timePerQuestion": 20
+    },
+    {
+      "isGlobalTimer": true,
+      "name": "Contrarreloj",
+      "totalTime": 60
+    },
+    {
+      "name": "Duelo",
+      "numQuestions": 15,
+      "timePerQuestion": 10
+    },
+    {
+      "name": "SyncMode_005246",
+      "description": "Modo sync test",
+      "time_limit": 20,
+      "score_per_question": 50,
+      "bonus": 10
+    }
+  ]
+}

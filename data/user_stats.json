@@ -1,0 +1,38 @@
+{
+  "users": {
+    "admin": {
+      "username": "admin",
+      "total_games": 12,
+      "classic_games": 7,
+      "timeattack_games": 3,
+      "duel_games": 2,
+      "total_correct": 85,
+      "total_incorrect": 15,
+      "max_streak": 8,
+      "highest_score": 1200,
+      "duel_victories": 1,
+      "categories_played": [
+        "Historia",
+        "Ciencia",
+        "Arte"
+      ],
+      "last_played": "2024-07-04T18:45:00"
+    },
+    "vc006": {
+      "total_games": 1,
+      "classic_games": 1,
+      "timeattack_games": 0,
+      "duel_games": 0,
+      "total_correct": 3,
+      "total_incorrect": 12,
+      "max_streak": 0,
+      "highest_score": 200,
+      "duel_victories": 0,
+      "categories_played": [
+        "Historia"
+      ],
+      "last_played": "2025-07-04T21:41:30.884766"
+    }
+  },
+  "last_updated": "2025-07-04T21:41:30.884773"
+}

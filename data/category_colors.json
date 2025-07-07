@@ -1,0 +1,66 @@
+{
+  "Arte": {
+    "bg_color": "#8e44ad",
+    "border_color": "#1a2a2e",
+    "hover_color": "#9b59b6",
+    "icon": "🎨",
+    "shadow_color": "#1a2a2e",
+    "text_color": "white"
+  },
+  "Ciencia": {
+    "bg_color": "#27ae60",
+    "border_color": "#1a2a2e",
+    "hover_color": "#2ecc71",
+    "icon": "🔬",
+    "shadow_color": "#1a2a2e",
+    "text_color": "white"
+  },
+  "Deportes": {
+    "bg_color": "#d35400",
+    "border_color": "#1a2a2e",
+    "hover_color": "#e67e22",
+    "icon": "⚽",
+    "shadow_color": "#1a2a2e",
+    "text_color": "white"
+  },
+  "Entretenimiento": {
+    "bg_color": "#c0392b",
+    "border_color": "#1a2a2e",
+    "hover_color": "#e74c3c",
+    "icon": "🎮",
+    "shadow_color": "#1a2a2e",
+    "text_color": "white"
+  },
+  "General": {
+    "bg_color": "#1a2a2e",
+    "border_color": "#1a2a2e",
+    "hover_color": "#2c3e50",
+    "icon": "❓",
+    "shadow_color": "#1a2a2e",
+    "text_color": "white"
+  },
+  "Geografía": {
+    "bg_color": "#16a085",
+    "border_color": "#1a2a2e",
+    "hover_color": "#1abc9c",
+    "icon": "🌎",
+    "shadow_color": "#1a2a2e",
+    "text_color": "white"
+  },
+  "Historia": {
+    "bg_color": "#2c3e50",
+    "border_color": "#1a2a2e",
+    "hover_color": "#34495e",
+    "icon": "📚",
+    "shadow_color": "#1a2a2e",
+    "text_color": "white"
+  },
+  "Categoría_Prueba_Completa": {
+    "bg_color": "#3498db",
+    "icon": "📝",
+    "text_color": "white",
+    "hover_color": "#2980b9",
+    "border_color": "#1a2a2e",
+    "shadow_color": "#1a2a2e"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-07-07T00:53:56.949611",
+  "overall_status": "✅ SISTEMA LISTO",
+  "passed_tests": 5,
+  "total_tests": 5,
+  "results": {
+    "backend": {
+      "status": true,
+      "message": "✅ Backend funcionando correctamente",
+      "response_time": 2.067
+    },
+    "frontend": {
+      "status": true,
+      "message": "✅ Frontend funcionando correctamente",
+      "response_time": 2.05
+    },
+    "api_endpoints": {
+      "status": true,
+      "message": "✅ 11/11 endpoints funcionando (100.0%)",
+      "details": {
+        "/api/questions": {
+          "status": true,
+          "name": "Preguntas",
+          "code": 200
+        },
+        "/api/categories": {
+          "status": true,
+          "name": "Categorías",
+          "code": 200
+        },
+        "/api/ranking": {
+          "status": true,
+          "name": "Ranking",
+          "code": 200
+        },
+        "/api/players": {
+          "status": true,
+          "name": "Jugadores",
+          "code": 200
+        },
+        "/api/config": {
+          "status": true,
+          "name": "Configuración",
+          "code": 200
+        },
+        "/api/game-modes": {
+          "status": true,
+          "name": "Modos de Juego",
+          "code": 200
+        },
+        "/api/sounds": {
+          "status": true,
+          "name": "Sonidos",
+          "code": 200
+        },
+        "/api/achievements": {
+          "status": true,
+          "name": "Logros",
+          "code": 200
+        },
+        "/api/user_stats": {
+          "status": true,
+          "name": "Estadísticas de Usuario",
+          "code": 200
+        },
+        "/api/category-colors": {
+          "status": true,
+          "name": "Colores de Categorías",
+          "code": 200
+        },
+        "/api/button-styles": {
+          "status": true,
+          "name": "Estilos de Botones",
+          "code": 200
+        }
+      }
+    },
+    "game_files": {
+      "status": true,
+      "message": "✅ 10/10 archivos encontrados (100.0%)",
+      "details": {
+        "game/main.py": {
+          "status": true,
+          "name": "Juego Principal",
+          "size": 195250
+        },
+        "game/achievements.py": {
+          "status": true,
+          "name": "Sistema de Logros",
+          "size": 9549
+        },
+        "game/api_client.py": {
+          "status": true,
+          "name": "Cliente API",
+          "size": 11228
+        },
+        "game/cloud_sync.py": {
+          "status": true,
+          "name": "Sincronización en Nube",
+          "size": 15929
+        },
+        "game/user_registration.py": {
+          "status": true,
+          "name": "Registro de Usuarios",
+          "size": 25067
+        },
+        "game/wheel_animation.py": {
+          "status": true,
+          "name": "Animaciones",
+          "size": 5839
+        },
+        "assets/images/logo.png": {
+          "status": true,
+          "name": "Logo del Juego",
+          "size": 1335821
+        },
+        "assets/sounds/acierto.mp3": {
+          "status": true,
+          "name": "Sonido Acierto",
+          "size": 97879
+        },
+        "assets/sounds/errado.mp3": {
+          "status": true,
+          "name": "Sonido Error",
+          "size": 102812
+        },
+        "assets/sounds/despliegue_opciones.mp3": {
+          "status": true,
+          "name": "Sonido Despliegue",
+          "size": 28557
+        }
+      }
+    },
+    "database_files": {
+      "status": true,
+      "message": "✅ 9/10 archivos válidos (90.0%)",
+      "details": {
+        "data/questions.json": {
+          "status": true,
+          "name": "Preguntas",
+          "elements": 761,
+          "size": 293367
+        },
+        "data/ranking.json": {
+          "status": true,
+          "name": "Ranking",
+          "elements": 1,
+          "size": 1820
+        },
+        "data/config.json": {
+          "status": true,
+          "name": "Configuración",
+          "elements": 6,
+          "size": 601
+        },
+        "data/categories.json": {
+          "status": true,
+          "name": "Categorías",
+          "elements": 10,
+          "size": 179
+        },
+        "data/usuarios.json": {
+          "status": true,
+          "name": "Usuarios",
+          "elements": 4,
+          "size": 2546
+        },
+        "data/user_stats.json": {
+          "status": true,
+          "name": "Estadísticas de Usuario",
+          "elements": 2,
+          "size": 890
+        },
+        "data/achievements.json": {
+          "status": true,
+          "name": "Logros",
+          "elements": 23,
+          "size": 5836
+        },
+        "data/game_history.json": {
+          "status": false,
+          "name": "Historial de Juegos",
+          "error": "JSON inválido"
+        },
+        "data/admins.json": {
+          "status": true,
+          "name": "Administradores",
+          "elements": 1,
+          "size": 245
+        },
+        "data/button_styles.json": {
+          "status": true,
+          "name": "Estilos de Botones",
+          "elements": 9,
+          "size": 279
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "username": "prub1",
+    "modo": "Duelo",
+    "categoria": "Ciencia",
+    "puntuacion": 500,
+    "correctas": 5,
+    "incorrectas": 10
+  },
+  {
+    "username": "vc006",
+    "modo": "Duelo",
+    "categoria": "Ciencia",
+    "puntuacion": 100,
+    "correctas": 1,
+    "incorrectas": 14
+  },
+  {
+    "username": "vc006",
+    "modo": "Contrarreloj",
+    "categoria": "Ciencia",
+    "correctas": 1,
+    "incorrectas": 4,
+    "tiempo_global": 0,
+    "tiempo_restante": 60,
+    "is_global_timer": true,
+    "pregunta_actual": 6,
+    "total_preguntas": 9999,
+    "preguntas_usadas": 

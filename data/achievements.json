@@ -1,0 +1,209 @@
+[
+  {
+    "id": "first_victory",
+    "name": "Primera Victoria",
+    "description": "Completaste tu primer juego",
+    "icon": "🥇",
+    "condition_type": "games_played",
+    "condition_value": 1,
+    "reward_points": 50
+  },
+  {
+    "id": "perfect_score",
+    "name": "Puntuación Perfecta",
+    "description": "Obtén 15/15 en modo clásico",
+    "icon": "⭐",
+    "condition_type": "perfect_classic",
+    "condition_value": 1,
+    "reward_points": 100
+  },
+  {
+    "id": "streak_master",
+    "name": "Maestro de Racha",
+    "description": "Obtén una racha de 5 aciertos consecutivos",
+    "icon": "🔥",
+    "condition_type": "max_streak",
+    "condition_value": 5,
+    "reward_points": 75
+  },
+  {
+    "id": "speed_demon",
+    "name": "Dominio de Velocidad",
+    "description": "Responde 20+ preguntas en modo contrarreloj",
+    "icon": "⚡",
+    "condition_type": "timeattack_questions",
+    "condition_value": 20,
+    "reward_points": 80
+  },
+  {
+    "id": "duel_champion",
+    "name": "Campeón del Duelo",
+    "description": "Gana 3 duelos",
+    "icon": "⚔️",
+    "condition_type": "duel_victories",
+    "condition_value": 3,
+    "reward_points": 90
+  },
+  {
+    "id": "category_expert",
+    "name": "Experto de Categoría",
+    "description": "Domina una categoría con 10+ aciertos",
+    "icon": "🎯",
+    "condition_type": "category_master",
+    "condition_value": 10,
+    "reward_points": 120
+  },
+  {
+    "id": "veteran_player",
+    "name": "Jugador Veterano",
+    "description": "Juega 50 partidas en total",
+    "icon": "👴",
+    "condition_type": "games_played",
+    "condition_value": 50,
+    "reward_points": 150
+  },
+  {
+    "id": "knowledge_seeker",
+    "name": "Buscador de Conocimiento",
+    "description": "Responde correctamente 100 preguntas",
+    "icon": "📚",
+    "condition_type": "total_correct",
+    "condition_value": 100,
+    "reward_points": 200
+  },
+  {
+    "id": "time_master",
+    "name": "Maestro del Tiempo",
+    "description": "Completa 10 partidas en modo contrarreloj",
+    "icon": "⏰",
+    "condition_type": "timeattack_games",
+    "condition_value": 10,
+    "reward_points": 120
+  },
+  {
+    "id": "classic_master",
+    "name": "Maestro Clásico",
+    "description": "Completa 20 partidas en modo clásico",
+    "icon": "🏛️",
+    "condition_type": "classic_games",
+    "condition_value": 20,
+    "reward_points": 150
+  },
+  {
+    "id": "duel_master",
+    "name": "Maestro del Duelo",
+    "description": "Completa 15 duelos",
+    "icon": "🗡️",
+    "condition_type": "duel_games",
+    "condition_value": 15,
+    "reward_points": 180
+  },
+  {
+    "id": "high_scorer",
+    "name": "Alto Puntuador",
+    "description": "Alcanza una puntuación de 1000+ puntos",
+    "icon": "🏆",
+    "condition_type": "highest_score",
+    "condition_value": 1000,
+    "reward_points": 250
+  },
+  {
+    "id": "accuracy_master",
+    "name": "Maestro de Precisión",
+    "description": "Mantén una precisión del 90% o más en 10 partidas",
+    "icon": "🎯",
+    "condition_type": "accuracy_master",
+    "condition_value": 90,
+    "reward_points": 200
+  },
+  {
+    "id": "streak_legend",
+    "name": "Leyenda de Racha",
+    "description": "Obtén una racha de 10 aciertos consecutivos",
+    "icon": "🔥🔥",
+    "condition_type": "max_streak",
+    "condition_value": 10,
+    "reward_points": 300
+  },
+  {
+    "id": "speed_legend",
+    "name": "Leyenda de Velocidad",
+    "description": "Responde 50+ preguntas en modo contrarreloj",
+    "icon": "⚡⚡",
+    "condition_type": "timeattack_questions",
+    "condition_value": 50,
+    "reward_points": 400
+  },
+  {
+    "id": "duel_legend",
+    "name": "Leyenda del Duelo",
+    "description": "Gana 10 duelos consecutivos",
+    "icon": "⚔️⚔️",
+    "condition_type": "duel_victories",
+    "condition_value": 10,
+    "reward_points": 500
+  },
+  {
+    "id": "category_legend",
+    "name": "Leyenda de Categoría",
+    "description": "Domina 3 categorías diferentes con 20+ aciertos cada una",
+    "icon": "🎯🎯",
+    "condition_type": "category_legend",
+    "condition_value": 3,
+    "reward_points": 600
+  },
+  {
+    "id": "perfect_legend",
+    "name": "Leyenda Perfecta",
+    "description": "Obtén puntuación perfecta en todos los modos de juego",
+    "icon": "⭐⭐",
+    "condition_type": "perfect_all_modes",
+    "condition_value": 1,
+    "reward_points": 1000
+  },
+  {
+    "id": "daily_player",
+    "name": "Jugador Diario",
+    "description": "Juega al menos una partida durante 7 días consecutivos",
+    "icon": "📅",
+    "condition_type": "daily_streak",
+    "condition_value": 7,
+    "reward_points": 150
+  },
+  {
+    "id": "social_player",
+    "name": "Jugador Social",
+    "description": "Participa en 20 duelos con diferentes oponentes",
+    "icon": "👥",
+    "condition_type": "unique_opponents",
+    "condition_value": 20,
+    "reward_points": 200
+  },
+  {
+    "id": "knowledge_master",
+    "name": "Maestro del Conocimiento",
+    "description": "Responde correctamente 500 preguntas en total",
+    "icon": "🧠",
+    "condition_type": "total_correct",
+    "condition_value": 500,
+    "reward_points": 800
+  },
+  {
+    "id": "game_master",
+    "name": "Maestro del Juego",
+    "description": "Completa 100 partidas en total",
+    "icon": "👑",
+    "condition_type": "games_played",
+    "condition_value": 100,
+    "reward_points": 1000
+  },
+  {
+    "id": "ultimate_champion",
+    "name": "Campeón Supremo",
+    "description": "Desbloquea todos los logros del juego",
+    "icon": "🏆👑",
+    "condition_type": "all_achievements",
+    "condition_value": 1,
+    "reward_points": 2000
+  }
+]

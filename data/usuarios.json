@@ -1,0 +1,97 @@
+{
+  "vc006": {
+    "id": "39a25078-43c8-4ede-bd0e-c40dfd052f09",
+    "fullName": "Victor Cabrera (Actualizado)",
+    "username": "vc006",
+    "password": "d47d4680f4aafbf7f273e6f24b30328693ba737ceb6f086139aaf20d0922bdc9",
+    "email": null,
+    "created_at": "2025-07-04T21:24:34.417965",
+    "last_login": "2025-07-07T14:04:52.043015",
+    "stats": {
+      "total_games": 5,
+      "total_score": 1000,
+      "best_score": 500,
+      "favorite_mode": null,
+      "favorite_category": null,
+      "duel_games": 3,
+      "total_correct": 7,
+      "total_incorrect": 31,
+      "max_streak": 5,
+      "categories_played": [
+        "Ciencia"
+      ],
+      "last_played": "2025-07-06T23:59:24.416011"
+    }
+  },
+  "prub1": {
+    "id": "230a130d-350a-4b96-9cfa-657a54f68bf0",
+    "fullName": "prueba",
+    "username": "prub1",
+    "password": "d47d4680f4aafbf7f273e6f24b30328693ba737ceb6f086139aaf20d0922bdc9",
+    "email": "",
+    "created_at": "2025-07-06T11:25:00.650104",
+    "last_login": "2025-07-06T14:19:19.430041",
+    "stats": {
+      "total_games": 3,
+      "total_score": 1300,
+      "best_score": 500,
+      "favorite_mode": null,
+      "favorite_category": null,
+      "duel_games": 3,
+      "total_correct": 13,
+      "total_incorrect": 24,
+      "max_streak": 5,
+      "categories_played": [
+        "Ciencia"
+      ],
+      "last_played": "2025-07-06T23:59:20.297057"
+    },
+    "score": 0,
+    "mode": "",
+    "categoria": "",
+    "correctas": 0,
+    "incorrectas": 0,
+    "tiempo": 0,
+    "fecha": "",
+    "is_admin": false
+  },
+  "TestUser": {
+    "username": "TestUser",
+    "stats": {
+      "total_games": 1,
+      "total_score": 1000,
+      "best_score": 1000,
+      "classic_games": 1,
+      "total_correct": 10,
+      "total_incorrect": 2,
+      "max_streak": 5,
+      "categories_played": [
+        "Historia"
+      ],
+      "last_played": "2025-07-06T22:33:16.252070"
+    }
+  },
+  "test_user": {
+    "id": "1",
+    "username": "test_user",
+    "fullName": "Usuario de Prueba",
+    "password": "test123",
+    "email": "test@example.com",
+    "created_at": "2025-07-07T00:52:34",
+    "last_login": "2025-07-07T00:52:34",
+    "stats": {
+      "total_games": 0,
+      "total_score": 0,
+      "best_score": 0,
+      "favorite_mode": "",
+      "favorite_category": ""
+    },
+    "score": 0,
+    "mode": "",
+    "categoria": "",
+    "correctas": 0,
+    "incorrectas": 0,
+    "tiempo": 0,
+    "fecha": "2025-07-07T00:52:37.035906"
+  }
+}

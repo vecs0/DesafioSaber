@@ -1,0 +1,79 @@
+{
+    "jugadores": [
+        "victor ",
+        "josu",
+        "victor"
+    ],
+    "puntuaciones": {
+        "victor ": 177,
+        "josu": 88,
+        "victor": 0,
+        "": 57
+    },
+    "categorias": {
+        "Ciencia": [
+            {
+                "pregunta": "\u00bfCu\u00e1l es el elemento qu\u00edmico con s\u00edmbolo 'O'?",
+                "opciones": [
+                    "Oro",
+                    "Ox\u00edgeno",
+                    "Osmio",
+                    "Oganes\u00f3n"
+                ],
+                "respuesta": 1,
+                "dificultad": "F\u00e1cil"
+            },
+            {
+                "pregunta": "\u00bfQu\u00e9 cient\u00edfico formul\u00f3 la teor\u00eda de la relatividad?",
+                "opciones": [
+                    "Isaac Newton",
+                    "Albert Einstein",
+                    "Stephen Hawking",
+                    "Marie Curie"
+                ],
+                "respuesta": 1,
+                "dificultad": "Media"
+            }
+        ],
+        "Historia": [
+            {
+                "pregunta": "\u00bfEn qu\u00e9 a\u00f1o lleg\u00f3 Col\u00f3n a Am\u00e9rica?",
+                "opciones": [
+                    "1492",
+                    "1521",
+                    "1607",
+                    "1776"
+                ],
+                "respuesta": 0,
+                "dificultad": "F\u00e1cil"
+            },
+            {
+                "pregunta": "\u00bfQui\u00e9n fue el primer presidente de Estados Unidos?",
+                "opciones": [
+                    "Thomas Jefferson",
+                    "George Washington",
+                    "Abraham Lincoln",
+                    "John Adams"
+                ],
+                "respuesta": 1,
+                "dificultad": "F\u00e1cil"
+            }
+        ],
+        "Arte": [
+            {
+                "pregunta": "\u00bfQui\u00e9n pint\u00f3 'La noche estrellada'?",
+                "opciones": [
+                    "Pablo Picasso",
+                    "Vincent van Gogh",
+                    "Salvador Dal\u00ed",
+                    "Claude Monet"
+                ],
+                "respuesta": 1,
+                "dificultad": "Media"
+            }
+        ],
+        "Deportes": [],
+        "Entretenimiento": [],
+        "Geograf\u00eda": []
+    }
+}
