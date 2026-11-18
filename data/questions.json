@@ -10641,21 +10641,5 @@
     "modo": "Clásico",
     "fecha_creacion": "2025-07-06T22:39:06.610524",
     "id": 10002
-  },
-  {
-    "id": 10003,
-    "modo": "SyncMode_005246",
-    "categoria": "SyncCat_005246",
-    "dificultad": "Fácil",
-    "pregunta": "¿Pregunta sync 005246?",
-    "opciones": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "respuesta": "A",
-    "imagen": null,
-    "fecha_creacion": "2025-07-07T00:52:58.772008"
   }
 ]

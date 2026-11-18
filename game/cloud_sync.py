@@ -6,8 +6,8 @@ import time
 from datetime import datetime
 import hashlib
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from utils.auto_backup import auto_backup
+from paths import ROOT_DIR, DATA_DIR
+from auto_backup import auto_backup
 
 class CloudSync:
     def __init__(self, api_url="http://localhost:5000/api"):

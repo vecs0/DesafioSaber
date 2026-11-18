@@ -1,0 +1,14 @@
+# Juego de escritorio
+pygame>=2.6.1
+Pillow>=13.0.0
+requests>=2.34.2
+websocket-client>=1.9.2
+psutil>=7.2.2
+matplotlib>=3.11.2
+ttkthemes>=3.3.0
+
+# Backend del panel de administración
+Flask>=3.1.3
+flask-cors>=6.0.5
+Flask-SocketIO>=5.7.2
+python-socketio>=5.18.1

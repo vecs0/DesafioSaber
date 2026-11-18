@@ -43,3 +43,14 @@ data/current_user.json
 backups/*
 !backups/.gitkeep
 node_modules
+
+# Datos temporales generados al jugar / usar el panel
+data/offline_queue.json
+data/current_duel.json
+data/*_report.json
+uploads/
+web_admin/uploads/
+web_admin/build/
+backups/
+*.spec
+release/

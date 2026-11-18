@@ -5,8 +5,8 @@ import time
 from datetime import datetime
 from flask import Flask, jsonify, request
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from utils.auto_backup import auto_backup
+from paths import ROOT_DIR, DATA_DIR
+from auto_backup import auto_backup
 
 class APIClient:
     def __init__(self, base_url="http://localhost:5000/api"):
@@ -108,14 +108,14 @@ class APIClient:
             # Obtener preguntas actualizadas
             questions = self.get_questions()
             if questions:
-                with open('../data/questions.json', 'w', encoding='utf-8') as f:
+                with open('data/questions.json', 'w', encoding='utf-8') as f:
                     json.dump(questions, f, ensure_ascii=False, indent=2)
                 print("Archivo questions.json actualizado")
             
             # Obtener configuración actualizada
             config = self.get_config()
             if config:
-                with open('../data/config.json', 'w', encoding='utf-8') as f:
+                with open('data/config.json', 'w', encoding='utf-8') as f:
                     json.dump(config, f, ensure_ascii=False, indent=2)
                 print("Archivo config.json actualizado")
                 
@@ -214,7 +214,7 @@ def load_questions_from_api():
     
     # Si no hay conexión, cargar desde archivo local
     try:
-        with open('../data/questions.json', 'r', encoding='utf-8') as f:
+        with open('data/questions.json', 'r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
         print(f"Error cargando preguntas locales: {e}")
@@ -229,7 +229,7 @@ def load_config_from_api():
     
     # Si no hay conexión, cargar desde archivo local
     try:
-        with open('../data/config.json', 'r', encoding='utf-8') as f:
+        with open('data/config.json', 'r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
         print(f"Error cargando configuración local: {e}")
@@ -237,7 +237,6 @@ def load_config_from_api():
 
 app = Flask(__name__)
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
 
 @app.route('/api/user_stats', methods=['GET'])
 def get_user_stats():

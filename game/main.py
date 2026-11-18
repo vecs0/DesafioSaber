@@ -10,8 +10,8 @@ from PIL import Image, ImageTk
 import requests
 import threading
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from utils.auto_backup import auto_backup
+from paths import ROOT_DIR, DATA_DIR
+from auto_backup import auto_backup
 
 # Imports para funcionalidades del juego
 try:
@@ -96,7 +96,7 @@ class SoundManager:
         """Inicializa el administrador de sonidos"""
         self.enabled = True
         self.sounds = {}
-        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        base_dir = ROOT_DIR
         self.sound_files = {
             'acierto': os.path.join(base_dir, 'assets', 'sounds', 'acierto.mp3'),
             'errado': os.path.join(base_dir, 'assets', 'sounds', 'errado.mp3'),
@@ -488,7 +488,7 @@ class DesafioSaberApp:
         """Carga el título del juego desde archivo local para mayor velocidad"""
         try:
             # Cargar desde archivo local en lugar de API para mayor velocidad
-            config_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'config.json')
+            config_file = os.path.join(ROOT_DIR, 'data', 'config.json')
             if os.path.exists(config_file):
                 with open(config_file, 'r', encoding='utf-8') as f:
                     config = json.load(f)
@@ -520,7 +520,7 @@ class DesafioSaberApp:
     def load_current_user(self):
         """Carga el usuario actual desde el archivo de persistencia (optimizado)"""
         try:
-            current_user_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'current_user.json')
+            current_user_file = os.path.join(ROOT_DIR, 'data', 'current_user.json')
             if os.path.exists(current_user_file):
                 with open(current_user_file, 'r', encoding='utf-8') as f:
                     user_data = json.load(f)
@@ -533,7 +533,7 @@ class DesafioSaberApp:
     def save_current_user(self, username=None):
         """Guarda el usuario actual en el archivo de persistencia (optimizado)"""
         try:
-            current_user_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'current_user.json')
+            current_user_file = os.path.join(ROOT_DIR, 'data', 'current_user.json')
             user_data = {
                 'username': username or self.current_user,
                 'timestamp': datetime.now().isoformat()
@@ -547,7 +547,7 @@ class DesafioSaberApp:
     def clear_current_user(self):
         """Limpia el usuario actual del archivo de persistencia (optimizado)"""
         try:
-            current_user_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'current_user.json')
+            current_user_file = os.path.join(ROOT_DIR, 'data', 'current_user.json')
             if os.path.exists(current_user_file):
                 os.remove(current_user_file)
         except Exception as e:
@@ -709,7 +709,7 @@ class DesafioSaberApp:
     def cargar_usuarios_registrados(self):
         """Carga la lista de usuarios registrados desde el ranking (optimizado)"""
         try:
-            ranking_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'ranking.json')
+            ranking_file = os.path.join(ROOT_DIR, 'data', 'ranking.json')
             with open(ranking_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 # Si el archivo es una lista, convertirlo a dict
@@ -862,7 +862,7 @@ class DesafioSaberApp:
         canvas = tk.Canvas(main_container, highlightthickness=0, bd=0)
         canvas.pack(fill="both", expand=True)
         try:
-            bg_image = Image.open(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'assets', 'images', 'menu_background.png'))
+            bg_image = Image.open(os.path.join(ROOT_DIR, 'assets', 'images', 'menu_background.png'))
             bg_image = bg_image.resize((screen_width, screen_height), Image.Resampling.LANCZOS)
             self.bg_photo = ImageTk.PhotoImage(bg_image)
             canvas.create_image(0, 0, image=self.bg_photo, anchor="nw")
@@ -3285,7 +3285,7 @@ class DesafioSaberApp:
             
         try:
             # Usar ruta absoluta para mayor velocidad
-            ranking_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'ranking.json')
+            ranking_file = os.path.join(ROOT_DIR, 'data', 'ranking.json')
             with open(ranking_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 # Si el archivo es una lista, convertirlo a dict
@@ -3561,7 +3561,7 @@ class DesafioSaberApp:
             animation_state['widgets']['intro'] = intro_frame
             
             # Cargar y mostrar el logo
-            logo_image = Image.open(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'assets', 'images', 'logo.png'))
+            logo_image = Image.open(os.path.join(ROOT_DIR, 'assets', 'images', 'logo.png'))
             
             # Calcular proporciones para ajuste al 85% de la pantalla
             screen_width = self.root.winfo_screenwidth()
@@ -3862,7 +3862,7 @@ class DesafioSaberApp:
         }
         try:
             # Cargar desde archivo local en lugar de API para mayor velocidad
-            questions_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'questions.json')
+            questions_file = os.path.join(ROOT_DIR, 'data', 'questions.json')
             if os.path.exists(questions_file):
                 with open(questions_file, 'r', encoding='utf-8') as f:
                     questions_data = json.load(f)
@@ -4544,7 +4544,7 @@ class DesafioSaberApp:
         """Guarda los datos de la partida en el historial (data/game_history.json)"""
         try:
             import os, json
-            historial_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'game_history.json')
+            historial_file = os.path.join(ROOT_DIR, 'data', 'game_history.json')
             if os.path.exists(historial_file):
                 with open(historial_file, 'r', encoding='utf-8') as f:
                     data = json.load(f)

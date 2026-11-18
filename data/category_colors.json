@@ -54,13 +54,5 @@
     "icon": "📚",
     "shadow_color": "#1a2a2e",
     "text_color": "white"
-  },
-  "Categoría_Prueba_Completa": {
-    "bg_color": "#3498db",
-    "icon": "📝",
-    "text_color": "white",
-    "hover_color": "#2980b9",
-    "border_color": "#1a2a2e",
-    "shadow_color": "#1a2a2e"
   }
 }

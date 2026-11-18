@@ -9,15 +9,17 @@ import sqlite3
 from werkzeug.utils import secure_filename
 from flask_socketio import SocketIO, emit
 import subprocess
+import sys
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000", "http://127.0.0.1:3000"], supports_credentials=True)
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
+ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
+CORS(app, origins=ALLOWED_ORIGINS, supports_credentials=True)
+socketio = SocketIO(app, cors_allowed_origins=ALLOWED_ORIGINS, async_mode='threading')
 
 # Configuración
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'mp3', 'wav'}
-UPLOADS_ADMIN_FOLDER = os.path.join('uploads', 'admins')
+UPLOADS_ADMIN_FOLDER = os.path.join(UPLOAD_FOLDER, 'admins')
 ALLOWED_IMAGE_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 MAX_IMAGE_SIZE = 1 * 1024 * 1024  # 1MB
 
@@ -36,7 +38,7 @@ RANKING_FILE = os.path.join(DATA_FOLDER, 'ranking.json')
 CONFIG_FILE = os.path.join(DATA_FOLDER, 'config.json')
 GAME_DATA_FILE = os.path.join(DATA_FOLDER, 'desafiosaber_data.json')
 CATEGORIES_FILE = os.path.join(DATA_FOLDER, 'categories.json')
-SOUNDS_FOLDERS = [os.path.abspath(os.path.join(BASE_DIR, '../assets/sounds')), os.path.abspath(os.path.join(BASE_DIR, '../sounds'))]
+SOUNDS_FOLDERS = [os.path.abspath(os.path.join(BASE_DIR, '../assets/sounds'))]
 SOUNDS_EXTENSIONS = ('.mp3', '.wav')
 USERS_FILE = os.path.join(DATA_FOLDER, 'usuarios.json')
 RESET_FILE = os.path.join(os.path.dirname(__file__), '../reset_admin.txt')
@@ -770,7 +772,27 @@ def get_admin_users():
         admins = []
     # Solo admins (is_admin True o por convención)
     admins = [a for a in admins if a.get('is_admin', True)]
-    return jsonify({'success': True, 'users': admins})
+    # Nunca enviar contraseñas al navegador
+    publicos = [{k: v for k, v in a.items() if k != 'password'} for a in admins]
+    return jsonify({'success': True, 'users': publicos})
+
+@app.route('/api/admin-login', methods=['POST'])
+def admin_login():
+    """Verifica las credenciales del administrador en el servidor."""
+    data = request.json or {}
+    username = (data.get('username') or '').strip()
+    full_name = (data.get('fullName') or '').strip()
+    password = data.get('password') or ''
+    admins = load_json_file(ADMINS_FILE)
+    if isinstance(admins, dict):
+        admins = list(admins.values())
+    elif not isinstance(admins, list):
+        admins = []
+    for a in admins:
+        coincide = (username and a.get('username') == username) or (full_name and a.get('fullName') == full_name)
+        if coincide and password and a.get('password') == password:
+            return jsonify({'success': True, 'user': {k: v for k, v in a.items() if k != 'password'}})
+    return jsonify({'success': False, 'error': 'Usuario o contraseña incorrectos'}), 401
 
 @app.route('/api/admin-users', methods=['POST'])
 def add_admin_user():
@@ -808,12 +830,12 @@ def update_admin_user(user_id):
             admins[i].update({
                 'fullName': data.get('fullName', admin.get('fullName', '')),
                 'username': data.get('username', admin.get('username', '')),
-                'password': data.get('password', admin.get('password', '')),
+                'password': data.get('password') or admin.get('password', ''),  # vacío = conservar
                 'email': data.get('email', admin.get('email', ''))
             })
             if save_json_file(ADMINS_FILE, admins):
                 notify_update('admin_users')
-                return jsonify({'success': True, 'user': admins[i]})
+                return jsonify({'success': True, 'user': {k: v for k, v in admins[i].items() if k != 'password'}})
             else:
                 return jsonify({'success': False, 'error': 'Error al guardar'}), 500
     return jsonify({'success': False, 'error': 'Usuario no encontrado'}), 404
@@ -1087,7 +1109,7 @@ def clean_orphan_questions_api():
         abort(403, description='No autorizado')
     try:
         # Ejecutar el script de limpieza
-        result = subprocess.run(['python', '../utils/clean_orphan_questions.py'], capture_output=True, text=True, cwd=os.path.dirname(__file__))
+        result = subprocess.run([sys.executable, '../tools/clean_orphan_questions.py'], capture_output=True, text=True, cwd=os.path.dirname(__file__))
         output = result.stdout + '\n' + result.stderr
         if result.returncode == 0:
             notify_update('questions')
@@ -1101,4 +1123,8 @@ if __name__ == '__main__':
     print("Servidor de administracion iniciado en http://localhost:5000")
     print("API disponible en http://localhost:5000/api/")
     print("Web de administracion en http://localhost:3000")
-    socketio.run(app, host='0.0.0.0', port=5000, debug=True, use_reloader=False, allow_unsafe_werkzeug=True) 
+    # Por defecto solo escucha en esta PC y sin modo debug.
+    # Para exponerlo en la red local: DESAFIO_HOST=0.0.0.0  |  Para depurar: DESAFIO_DEBUG=1
+    host = os.environ.get('DESAFIO_HOST', '127.0.0.1')
+    debug = os.environ.get('DESAFIO_DEBUG') == '1'
+    socketio.run(app, host=host, port=5000, debug=debug, use_reloader=False, allow_unsafe_werkzeug=True) 

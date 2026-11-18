@@ -419,7 +419,8 @@ const SettingsPanel = () => {
               <input
                 type={showEditUserPassword ? 'text' : 'password'}
                 name="password"
-                value={currentUser.password}
+                value={currentUser.password || ''}
+                placeholder="Dejar vacío para no cambiarla"
                 onChange={handleModalUserChange}
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 pr-10"
               />

@@ -21,16 +21,19 @@ const AuthLogin = ({ onLogin, showAdminNameInput }) => {
   }, []);
 
   const handleLogin = async () => {
-    const res = await fetch('http://localhost:5000/api/admin-users');
-    if (!res.ok) {
+    let res;
+    try {
+      res = await fetch('http://localhost:5000/api/admin-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, fullName: adminNameInput, password }),
+      });
+    } catch {
       setError('Error de conexión con el servidor.');
       return;
     }
-    const data = await res.json();
-    const user = data.users.find(u =>
-      ((u.fullName === adminNameInput && adminNameInput) || (u.username === username && username))
-      && u.password === password
-    );
+    const data = await res.json().catch(() => ({}));
+    const user = res.ok && data.success ? data.user : null;
     if (user) {
       setError('');
       onLogin(user.fullName, user.username);

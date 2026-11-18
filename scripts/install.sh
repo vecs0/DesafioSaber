@@ -2,6 +2,7 @@
 # DesafíoSaber - Script de Instalación
 # ====================================
 
+cd "$(dirname "$0")/.." || exit 1
 echo "🎮 Instalando DesafíoSaber..."
 
 # Verificar Python
@@ -35,6 +36,6 @@ fi
 echo "✅ Instalación completada!"
 echo ""
 echo "🚀 Para iniciar el sistema:"
-echo "   python start_system.py"
+echo "   python3 scripts/start_all.py"
 echo ""
 echo "📖 Para más información, consulta README.md"
