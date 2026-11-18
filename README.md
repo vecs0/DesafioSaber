@@ -189,7 +189,7 @@ DesafíoSaber es un **proyecto local y educativo**: el backend escucha solo en `
 
 | Versión | Fecha | Cambios |
 |---|---|---|
-| **v1.1.0** | 2026 | Reorganización del repositorio, rutas que funcionan desde cualquier carpeta y desde el `.exe`, login verificado en el servidor, backend local por defecto, dependencias unificadas y ejecutable para Windows |
+| **v1.1.0** | 2026 | Reorganización del repositorio, rutas que funcionan desde cualquier carpeta y desde el `.exe`, menú que se adapta al tamaño de la ventana, login verificado en el servidor, backend local por defecto, dependencias unificadas y ejecutable para Windows |
 | **v1.0.0** | Julio 2025 | Juego de escritorio, panel de administración y sincronización en tiempo real |
 
 ## <img src="docs/icons/autor.svg" width="22" align="top" alt=""> Autor

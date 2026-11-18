@@ -855,8 +855,10 @@ class DesafioSaberApp:
     
     def setup_main_menu(self):
         self.clear_main_frame()
-        screen_width = self.root.winfo_screenwidth()
-        screen_height = self.root.winfo_screenheight()
+        # Usar el tamaño real de la ventana (no el de la pantalla) para centrar el menú
+        self.root.update_idletasks()
+        screen_width = self.root.winfo_width() if self.root.winfo_width() > 1 else self.root.winfo_screenwidth()
+        screen_height = self.root.winfo_height() if self.root.winfo_height() > 1 else self.root.winfo_screenheight()
         main_container = tk.Frame(self.main_frame)
         main_container.pack(expand=True, fill="both")
         canvas = tk.Canvas(main_container, highlightthickness=0, bd=0)
@@ -1008,11 +1010,13 @@ class DesafioSaberApp:
         ).place(relx=0.5, rely=0.5, anchor="center")
 
         # Botones del menú principal centrados
+        # Posición vertical relativa a la altura de la ventana (antes: valores fijos 400-640)
+        base_y = int(screen_height * 0.6)
         buttons = [
-            {"text": "🎮 JUGAR", "command": self.menu_jugar, "color": "#2ecc71", "y": 400},
-            {"text": "🏆 LOGROS", "command": self.mostrar_logros, "color": "#f39c12", "y": 480},
-            {"text": "📊 ESTADÍSTICAS", "command": self.mostrar_estadisticas, "color": "#9b59b6", "y": 560},
-            {"text": "🏅 RANKING", "command": self.mostrar_ranking, "color": "#e74c3c", "y": 640}
+            {"text": "🎮 JUGAR", "command": self.menu_jugar, "color": "#2ecc71", "y": base_y - 120},
+            {"text": "🏆 LOGROS", "command": self.mostrar_logros, "color": "#f39c12", "y": base_y - 40},
+            {"text": "📊 ESTADÍSTICAS", "command": self.mostrar_estadisticas, "color": "#9b59b6", "y": base_y + 40},
+            {"text": "🏅 RANKING", "command": self.mostrar_ranking, "color": "#e74c3c", "y": base_y + 120}
         ]
         for btn_config in buttons:
             btn_container = tk.Frame(main_container)
@@ -1060,7 +1064,7 @@ class DesafioSaberApp:
         canvas.create_text(
             screen_width//2,
             screen_height - 20,
-            text="v1.0.0 · Desarrollado con ❤️ por el equipo DesafíoSaber",
+            text="v1.1.0 · Desarrollado por Victor Emmanuel Cabrera Sosa",
             font=("Arial", 10),
             fill="white"
         )
